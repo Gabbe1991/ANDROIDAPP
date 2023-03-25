@@ -26,35 +26,71 @@
         android:layout_height="match_parent"
         app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintHorizontal_bias="0.038"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.053"
         app:navGraph="@navigation/mobile_navigation" />
 
-    <Button
-        android:id="@+id/rock_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sten"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="251dp" />
-
-    <Button
-        android:id="@+id/paper_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Paper"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="201dp" />
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="119dp"
+        android:layout_height="141dp"
+        android:layout_marginEnd="92dp"
+        android:text="results:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/computer_choice" />
 
     <Button
         android:id="@+id/scissors_button"
         android:layout_width="90dp"
         android:layout_height="47dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="92dp"
+        android:background="#E43838"
         android:text="Sax"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="144dp" />
+        app:layout_constraintEnd_toStartOf="@+id/result"
+        app:layout_constraintTop_toBottomOf="@+id/paper_button" />
+
+    <Button
+        android:id="@+id/rock_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="304dp"
+        android:text="Sten"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scissors_button" />
+
+    <TextView
+        android:id="@+id/computer_choice"
+        android:layout_width="184dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="28dp"
+        android:text="Computer choice:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_choice" />
+
+    <TextView
+        android:id="@+id/user_choice"
+        android:layout_width="200dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="76dp"
+        android:rotationX="-8"
+        android:text="You choose:"
+        app:layout_constraintStart_toEndOf="@+id/paper_button"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_activity_main" />
+
+    <Button
+        android:id="@+id/paper_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="300dp"
+        android:text="Paper"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_activity_main" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
