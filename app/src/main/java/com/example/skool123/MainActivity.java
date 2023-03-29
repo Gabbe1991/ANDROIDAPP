@@ -9,6 +9,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,14 +18,22 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
 
 
 import com.example.skool123.databinding.ActivityMainBinding;
 
+import io.realm.OrderedCollectionChangeSet;
+import io.realm.OrderedRealmCollectionChangeListener;
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
+import io.realm.RealmResults;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        Button rockButton = findViewById(R.id.rock_button);
-        Button paperButton = findViewById(R.id.paper_button);
-        Button scissorsButton = findViewById(R.id.scissors_button);
+        Button rockButton = findViewById(R.id.rock_button5);
+        Button paperButton = findViewById(R.id.paper_button5);
+        Button scissorsButton = findViewById(R.id.scissors_button5);
 
         rockButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,16 +114,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void handleChoice(Choices choice) {
         Choices computerChoice = randomChoice();
-        TextView userChoiceTextView = findViewById(R.id.user_choice);
-        TextView computerChoiceTextView = findViewById(R.id.computer_choice);
-        TextView resultTextView = findViewById(R.id.result);
+        TextView userChoiceTextView = findViewById(R.id.user_choice5);
+        TextView computerChoiceTextView = findViewById(R.id.computer_choice5);
+        TextView resultTextView = findViewById(R.id.result5);
 
         userChoiceTextView.setText("You chose: " + choice.getChoice());
         computerChoiceTextView.setText("Computer chose: " + computerChoice.getChoice());
         resultTextView.setText("Result: " + checkResult(choice, computerChoice));
 
-        // fetch och post här inom kort
+
     }
+
 
 
 }

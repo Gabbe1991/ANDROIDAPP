@@ -1,6 +1,12 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'realm-android'
 }
+
+apply plugin: "realm-android"
+
 
 android {
     namespace 'com.example.skool123'
@@ -14,6 +20,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    realm {
+        syncEnabled = true
     }
 
     buildTypes {
